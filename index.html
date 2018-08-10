@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head -->
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<!-- Body -->
+<body>
+	<div class="mobile"><hr><h3>This app is not meant for small mobile devices.<br>Please use a laptop, desktop, or Ipad Pro.</h3><hr></div>
+	<div class="container" id="zero">
+    	<div class="row" id="intro">
+        	<div class="col">
+        		<h3>This app provides information about genes in high correlation with TCGA survival data, for several types of cancer.
+        		<br>To begin choose a type from the list below, and you will be directed to the corresponding genes.</h3>
+        		<hr>
+        		<h6 style="text-align: center;">Powered by: Oncolnc.org | Entrez API | jQuery | Bootstrap</h6>
+        		<hr>
+      		</div>
+    	</div>
+    	<div class="row" id="types">
+      		<div class="col">
+   				<ul>
+          		<li id="blca">Bladder Urothelial Carcinoma (BLCA)</li>
+          		<li id="brca">Breast Invasive Carcinoma (BRCA)</li>
+          		<li id="cesc">Cervical squamous cell carcinoma and endocervical adenocarcinoma (CESC)</li>
+          		<li id="coad">Colon adenocarcinoma (COAD)</li>
+          		<li id="esca">Esophageal carcinoma (ESCA)</li>
+          		<li id="gbm">Glioblastoma multiforme (GBM)</li>
+          		<li id="hnsc">Head and Neck squamous cell carcinoma (HNSC)</li>
+          		<li id="kirc">Kidney renal clear cell carcinoma (KIRC)</li>
+          		<li id="kirp">Kidney renal papillary cell carcinoma (KIRP)</li>
+          		<li id="laml">Acute Myeloid Leukemia (LAML)</li>
+          		<li id="lgg">Brain Lower Grade Glioma (LGG)</li>
+          		<li id="lihc">Liver hepatocellular carcinoma (LIHC)</li>
+          		<li id="luad">Lung adenocarcinoma (LUAD)</li>
+          		<li id="lusc">Lung squamous cell carcinoma (LUSC)</li>
+          		<li id="ov">Ovarian serous cystadenocarcinoma (OV)</li>
+          		<li id="paad">Pancreatic adenocarcinoma (PAAD)</li>
+          		<li id="read">Rectum adenocarcinoma (READ)</li>
+          		<li id="sarc">Sarcoma (SARC)</li>
+          		<li id="skcm">Skin Cutaneous Melanoma (SKCM)</li>
+          		<li id="stad">Stomach adenocarcinoma (STAD)</li>
+          		<li id="ucec">Uterine Corpus Endometrial Carcinoma (UCEC)</li>
+          		</ul>
+      		</div>
+    	</div>
+  	</div>
+
+    <!-- ONE=============================================================== -->
+    
+    <hr>
+    <div class="container" id="one">
+    	<h2 style="text-align: center;">Bladder Urothelial Carcinoma</h2>
+    	<div class="row">
+    		<div class="col" id="blca-genes-info">
+    			<p><b>Gene Description<br>(click name)</b></p>
+    		</div>
+		  </div>
+		  <div class="row">
+			 <div class="col" id="btn">
+				<button class="btn">CLEAR</button>
+			 </div>
+		  </div>
+  		<div class="row" id="gene-row" >
+  			<div class="col" id="gene-col">
+  				<input class="form-control" id="blca" type="text" placeholder="Search by gene name, or click for description.">
+	  			<table id="table1">
+	  			<thead>
+	 				<tr>
+	  					<th class="pvalue-h" id="header"><u>P-VALUE</u></th>
+	  					<th class="name-h" id="header"><u>GENE NAME</u></th>
+	  					<th class="id-h" id="header"><u>ID</u></th>
+	 				</tr>
+	 				</thead>
+	 				<tbody id="blca-genes">
+				  </tbody>
+	      	</table>
+	      </div>
+    	</div>
+  	</div>
+    <br>
+    <!-- TWO=============================================================== -->
+
+    <hr>
+    <div class="container" id="two">
+      <h2 style="text-align: center;">Breast Invasive Carcinoma</h2>
+      <div class="row">
+        <div class="col" id="brca-genes-info">
+          <p><b>Gene Description<br>(click name)</b></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="btn">
+          <button class="btn">CLEAR</button>
+        </div>
+      </div>
+      <div class="row" id="gene-row" >
+        <div class="col" id="gene-col">
+          <input class="form-control" id="brca" type="text" placeholder="Search by gene name, or click for description.">
+          <table id="table1">
+          <thead>
+          <tr>
+              <th class="pvalue-h" id="header"><u>P-VALUE</u></th>
+              <th class="name-h" id="header"><u>GENE NAME</u></th>
+              <th class="id-h" id="header"><u>ID</u></th>
+          </tr>
+          </thead>
+          <tbody id="brca-genes">
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+    <!-- THREE============================================================= -->
+
+    <hr>
+    <div class="container" id="three">
+      <h2 style="text-align: center;">Cervical squamous cell carcinoma and endocervical adenocarcinoma</h2>
+      <div class="row">
+        <div class="col" id="cesc-genes-info">
+          <p><b>Gene Description<br>(click name)</b></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="btn">
+          <button class="btn">CLEAR</button>
+        </div>
+      </div>
+      <div class="row" id="gene-row" >
+        <div class="col" id="gene-col">
+          <input class="form-control" id="cesc" type="text" placeholder="Search by gene name, or click for description.">
+          <table id="table1">
+          <thead>
+          <tr>
+              <th class="pvalue-h" id="header"><u>P-VALUE</u></th>
+              <th class="name-h" id="header"><u>GENE NAME</u></th>
+              <th class="id-h" id="header"><u>ID</u></th>
+          </tr>
+          </thead>
+          <tbody id="cesc-genes">
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+
+ <!-- FOUR=============================================================== -->
+
+    <hr>
+    <div class="container" id="four">
+      <h2 style="text-align: center;">Colon Adenocarcinoma</h2>
+      <div class="row">
+        <div class="col" id="coad-genes-info">
+          <p><b>Gene Description<br>(click name)</b></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="btn">
+          <button class="btn">CLEAR</button>
+        </div>
+      </div>
+      <div class="row" id="gene-row" >
+        <div class="col" id="gene-col">
+          <input class="form-control" id="coad" type="text" placeholder="Search by gene name, or click for description.">
+          <table id="table1">
+          <thead>
+          <tr>
+              <th class="pvalue-h" id="header"><u>P-VALUE</u></th>
+              <th class="name-h" id="header"><u>GENE NAME</u></th>
+              <th class="id-h" id="header"><u>ID</u></th>
+          </tr>
+          </thead>
+          <tbody id="coad-genes">
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+
+  <!-- FIVE============================================================ -->
+
+    <hr>
+    <div class="container" id="five">
+      <h2 style="text-align: center;">Esophageal Carcinoma</h2>
+      <div class="row">
+        <div class="col" id="esca-genes-info">
+          <p><b>Gene Description<br>(click name)</b></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="btn">
+          <button class="btn">CLEAR</button>
+        </div>
+      </div>
+      <div class="row" id="gene-row" >
+        <div class="col" id="gene-col">
+          <input class="form-control" id="esca" type="text" placeholder="Search by gene name, or click for description.">
+          <table id="table1">
+          <thead>
+          <tr>
+              <th class="pvalue-h" id="header"><u>P-VALUE</u></th>
+              <th class="name-h" id="header"><u>GENE NAME</u></th>
+              <th class="id-h" id="header"><u>ID</u></th>
+          </tr>
+          </thead>
+          <tbody id="esca-genes">
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- SIX============================================================ -->
+
+    <hr>
+    <div class="container" id="six">
+      <h2 style="text-align: center;">Glioblastoma multiforme</h2>
+      <div class="row">
+        <div class="col" id="gbm-genes-info">
+          <p><b>Gene Description<br>(click name)</b></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="btn">
+          <button class="btn">CLEAR</button>
+        </div>
+      </div>
+      <div class="row" id="gene-row" >
+        <div class="col" id="gene-col">
+          <input class="form-control" id="gbm" type="text" placeholder="Search by gene name, or click for description.">
+          <table id="table1">
+          <thead>
+          <tr>
+              <th class="pvalue-h" id="header"><u>P-VALUE</u></th>
+              <th class="name-h" id="header"><u>GENE NAME</u></th>
+              <th class="id-h" id="header"><u>ID</u></th>
+          </tr>
+          </thead>
+          <tbody id="gbm-genes">
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- SEVEN============================================================ -->
+
+    <hr>
+    <div class="container" id="seven">
+      <h2 style="text-align: center;">Head and Neck squamous cell carcinoma</h2>
+      <div class="row">
+        <div class="col" id="hnsc-genes-info">
+          <p><b>Gene Description<br>(click name)</b></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="btn">
+          <button class="btn">CLEAR</button>
+        </div>
+      </div>
+      <div class="row" id="gene-row" >
+        <div class="col" id="gene-col">
+          <input class="form-control" id="hnsc" type="text" placeholder="Search by gene name, or click for description.">
+          <table id="table1">
+          <thead>
+          <tr>
+              <th class="pvalue-h" id="header"><u>P-VALUE</u></th>
+              <th class="name-h" id="header"><u>GENE NAME</u></th>
+              <th class="id-h" id="header"><u>ID</u></th>
+          </tr>
+          </thead>
+          <tbody id="hnsc-genes">
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- EIGHT============================================================ -->
+
+    <hr>
+    <div class="container" id="eight">
+      <h2 style="text-align: center;">Kidney renal papillary cell carcinoma</h2>
+      <div class="row">
+        <div class="col" id="kirc-genes-info">
+          <p><b>Gene Description<br>(click name)</b></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="btn">
+          <button class="btn">CLEAR</button>
+        </div>
+      </div>
+      <div class="row" id="gene-row" >
+        <div class="col" id="gene-col">
+          <input class="form-control" id="kirc" type="text" placeholder="Search by gene name, or click for description.">
+          <table id="table1">
+          <thead>
+          <tr>
+              <th class="pvalue-h" id="header"><u>P-VALUE</u></th>
+              <th class="name-h" id="header"><u>GENE NAME</u></th>
+              <th class="id-h" id="header"><u>ID</u></th>
+          </tr>
+          </thead>
+          <tbody id="kirc-genes">
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- NINE============================================================ -->
+
+    <hr>
+    <div class="container" id="nine">
+      <h2 style="text-align: center;">Kidney renal papillary cell carcinoma</h2>
+      <div class="row">
+        <div class="col" id="kirp-genes-info">
+          <p><b>Gene Description<br>(click name)</b></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="btn">
+          <button class="btn">CLEAR</button>
+        </div>
+      </div>
+      <div class="row" id="gene-row" >
+        <div class="col" id="gene-col">
+          <input class="form-control" id="kirp" type="text" placeholder="Search by gene name, or click for description.">
+          <table id="table1">
+          <thead>
+          <tr>
+              <th class="pvalue-h" id="header"><u>P-VALUE</u></th>
+              <th class="name-h" id="header"><u>GENE NAME</u></th>
+              <th class="id-h" id="header"><u>ID</u></th>
+          </tr>
+          </thead>
+          <tbody id="kirp-genes">
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- TEN============================================================ -->
+
+    <hr>
+    <div class="container" id="ten">
+      <h2 style="text-align: center;">Acute Myeloid Leukemia</h2>
+      <div class="row">
+        <div class="col" id="laml-genes-info">
+          <p><b>Gene Description<br>(click name)</b></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="btn">
+          <button class="btn">CLEAR</button>
+        </div>
+      </div>
+      <div class="row" id="gene-row" >
+        <div class="col" id="gene-col">
+          <input class="form-control" id="laml" type="text" placeholder="Search by gene name, or click for description.">
+          <table id="table1">
+          <thead>
+          <tr>
+              <th class="pvalue-h" id="header"><u>P-VALUE</u></th>
+              <th class="name-h" id="header"><u>GENE NAME</u></th>
+              <th class="id-h" id="header"><u>ID</u></th>
+          </tr>
+          </thead>
+          <tbody id="laml-genes">
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- ELEVEN============================================================ -->
+
+    <hr>
+    <div class="container" id="eleven">
+      <h2 style="text-align: center;">Brain Lower Grade Glioma</h2>
+      <div class="row">
+        <div class="col" id="lgg-genes-info">
+          <p><b>Gene Description<br>(click name)</b></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="btn">
+          <button class="btn">CLEAR</button>
+        </div>
+      </div>
+      <div class="row" id="gene-row" >
+        <div class="col" id="gene-col">
+          <input class="form-control" id="lgg" type="text" placeholder="Search by gene name, or click for description.">
+          <table id="table1">
+          <thead>
+          <tr>
+              <th class="pvalue-h" id="header"><u>P-VALUE</u></th>
+              <th class="name-h" id="header"><u>GENE NAME</u></th>
+              <th class="id-h" id="header"><u>ID</u></th>
+          </tr>
+          </thead>
+          <tbody id="lgg-genes">
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- TWELVE============================================================ -->
+
+    <hr>
+    <div class="container" id="twelve">
+      <h2 style="text-align: center;">Liver hepatocellular carcinoma</h2>
+      <div class="row">
+        <div class="col" id="lihc-genes-info">
+          <p><b>Gene Description<br>(click name)</b></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="btn">
+          <button class="btn">CLEAR</button>
+        </div>
+      </div>
+      <div class="row" id="gene-row" >
+        <div class="col" id="gene-col">
+          <input class="form-control" id="lihc" type="text" placeholder="Search by gene name, or click for description.">
+          <table id="table1">
+          <thead>
+          <tr>
+              <th class="pvalue-h" id="header"><u>P-VALUE</u></th>
+              <th class="name-h" id="header"><u>GENE NAME</u></th>
+              <th class="id-h" id="header"><u>ID</u></th>
+          </tr>
+          </thead>
+          <tbody id="lihc-genes">
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- THIRTEEN========================================================== -->
+
+    <hr>
+    <div class="container" id="thirteen">
+      <h2 style="text-align: center;">Lung adenocarcinoma</h2>
+      <div class="row">
+        <div class="col" id="luad-genes-info">
+          <p><b>Gene Description<br>(click name)</b></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="btn">
+          <button class="btn">CLEAR</button>
+        </div>
+      </div>
+      <div class="row" id="gene-row" >
+        <div class="col" id="gene-col">
+          <input class="form-control" id="luad" type="text" placeholder="Search by gene name, or click for description.">
+          <table id="table1">
+          <thead>
+          <tr>
+              <th class="pvalue-h" id="header"><u>P-VALUE</u></th>
+              <th class="name-h" id="header"><u>GENE NAME</u></th>
+              <th class="id-h" id="header"><u>ID</u></th>
+          </tr>
+          </thead>
+          <tbody id="luad-genes">
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- FOURTEEN========================================================== -->
+
+    <hr>
+    <div class="container" id="fourteen">
+      <h2 style="text-align: center;">Lung squamous cell carcinoma</h2>
+      <div class="row">
+        <div class="col" id="lusc-genes-info">
+          <p><b>Gene Description<br>(click name)</b></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="btn">
+          <button class="btn">CLEAR</button>
+        </div>
+      </div>
+      <div class="row" id="gene-row" >
+        <div class="col" id="gene-col">
+          <input class="form-control" id="lusc" type="text" placeholder="Search by gene name, or click for description.">
+          <table id="table1">
+          <thead>
+          <tr>
+              <th class="pvalue-h" id="header"><u>P-VALUE</u></th>
+              <th class="name-h" id="header"><u>GENE NAME</u></th>
+              <th class="id-h" id="header"><u>ID</u></th>
+          </tr>
+          </thead>
+          <tbody id="lusc-genes">
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- FIFTEEN========================================================== -->
+
+    <hr>
+    <div class="container" id="fifteen">
+      <h2 style="text-align: center;">Ovarian serous cystadenocarcinoma</h2>
+      <div class="row">
+        <div class="col" id="ov-genes-info">
+          <p><b>Gene Description<br>(click name)</b></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="btn">
+          <button class="btn">CLEAR</button>
+        </div>
+      </div>
+      <div class="row" id="gene-row" >
+        <div class="col" id="gene-col">
+          <input class="form-control" id="ov" type="text" placeholder="Search by gene name, or click for description.">
+          <table id="table1">
+          <thead>
+          <tr>
+              <th class="pvalue-h" id="header"><u>P-VALUE</u></th>
+              <th class="name-h" id="header"><u>GENE NAME</u></th>
+              <th class="id-h" id="header"><u>ID</u></th>
+          </tr>
+          </thead>
+          <tbody id="ov-genes">
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- SIXTEEN========================================================= -->
+
+    <hr>
+    <div class="container" id="sixteen">
+      <h2 style="text-align: center;">Pancreatic adenocarcinoma</h2>
+      <div class="row">
+        <div class="col" id="paad-genes-info">
+          <p><b>Gene Description<br>(click name)</b></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="btn">
+          <button class="btn">CLEAR</button>
+        </div>
+      </div>
+      <div class="row" id="gene-row" >
+        <div class="col" id="gene-col">
+          <input class="form-control" id="paad" type="text" placeholder="Search by gene name, or click for description.">
+          <table id="table1">
+          <thead>
+          <tr>
+              <th class="pvalue-h" id="header"><u>P-VALUE</u></th>
+              <th class="name-h" id="header"><u>GENE NAME</u></th>
+              <th class="id-h" id="header"><u>ID</u></th>
+          </tr>
+          </thead>
+          <tbody id="paad-genes">
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- SEVENTEEN========================================================= -->
+
+    <hr>
+    <div class="container" id="seventeen">
+      <h2 style="text-align: center;">Rectum adenocarcinoma</h2>
+      <div class="row">
+        <div class="col" id="read-genes-info">
+          <p><b>Gene Description<br>(click name)</b></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="btn">
+          <button class="btn">CLEAR</button>
+        </div>
+      </div>
+      <div class="row" id="gene-row" >
+        <div class="col" id="gene-col">
+          <input class="form-control" id="read" type="text" placeholder="Search by gene name, or click for description.">
+          <table id="table1">
+          <thead>
+          <tr>
+              <th class="pvalue-h" id="header"><u>P-VALUE</u></th>
+              <th class="name-h" id="header"><u>GENE NAME</u></th>
+              <th class="id-h" id="header"><u>ID</u></th>
+          </tr>
+          </thead>
+          <tbody id="read-genes">
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- EIGHTEEN========================================================= -->
+
+    <hr>
+    <div class="container" id="eighteen">
+      <h2 style="text-align: center;">Sarcoma</h2>
+      <div class="row">
+        <div class="col" id="sarc-genes-info">
+          <p><b>Gene Description<br>(click name)</b></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="btn">
+          <button class="btn">CLEAR</button>
+        </div>
+      </div>
+      <div class="row" id="gene-row" >
+        <div class="col" id="gene-col">
+          <input class="form-control" id="sarc" type="text" placeholder="Search by gene name, or click for description.">
+          <table id="table1">
+          <thead>
+          <tr>
+              <th class="pvalue-h" id="header"><u>P-VALUE</u></th>
+              <th class="name-h" id="header"><u>GENE NAME</u></th>
+              <th class="id-h" id="header"><u>ID</u></th>
+          </tr>
+          </thead>
+          <tbody id="sarc-genes">
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- NINETEEN========================================================= -->
+
+    <hr>
+    <div class="container" id="nineteen">
+      <h2 style="text-align: center;">Skin Cutaneous Melanoma</h2>
+      <div class="row">
+        <div class="col" id="skcm-genes-info">
+          <p><b>Gene Description<br>(click name)</b></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="btn">
+          <button class="btn">CLEAR</button>
+        </div>
+      </div>
+      <div class="row" id="gene-row" >
+        <div class="col" id="gene-col">
+          <input class="form-control" id="skcm" type="text" placeholder="Search by gene name, or click for description.">
+          <table id="table1">
+          <thead>
+          <tr>
+              <th class="pvalue-h" id="header"><u>P-VALUE</u></th>
+              <th class="name-h" id="header"><u>GENE NAME</u></th>
+              <th class="id-h" id="header"><u>ID</u></th>
+          </tr>
+          </thead>
+          <tbody id="skcm-genes">
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- TWENTY========================================================= -->
+
+    <hr>
+    <div class="container" id="twenty">
+      <h2 style="text-align: center;">Stomach adenocarcinoma</h2>
+      <div class="row">
+        <div class="col" id="stad-genes-info">
+          <p><b>Gene Description<br>(click name)</b></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="btn">
+          <button class="btn">CLEAR</button>
+        </div>
+      </div>
+      <div class="row" id="gene-row" >
+        <div class="col" id="gene-col">
+          <input class="form-control" id="stad" type="text" placeholder="Search by gene name, or click for description.">
+          <table id="table1">
+          <thead>
+          <tr>
+              <th class="pvalue-h" id="header"><u>P-VALUE</u></th>
+              <th class="name-h" id="header"><u>GENE NAME</u></th>
+              <th class="id-h" id="header"><u>ID</u></th>
+          </tr>
+          </thead>
+          <tbody id="stad-genes">
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- TWENTYONE========================================================= -->
+
+    <hr>
+    <div class="container" id="twentyone">
+      <h2 style="text-align: center;">Uterine Corpus Endometrial Carcinoma</h2>
+      <div class="row">
+        <div class="col" id="ucec-genes-info">
+          <p><b>Gene Description<br>(click name)</b></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="btn">
+          <button class="btn">CLEAR</button>
+        </div>
+      </div>
+      <div class="row" id="gene-row" >
+        <div class="col" id="gene-col">
+          <input class="form-control" id="ucec" type="text" placeholder="Search by gene name, or click for description.">
+          <table id="table1">
+          <thead>
+          <tr>
+              <th class="pvalue-h" id="header"><u>P-VALUE</u></th>
+              <th class="name-h" id="header"><u>GENE NAME</u></th>
+              <th class="id-h" id="header"><u>ID</u></th>
+          </tr>
+          </thead>
+          <tbody id="ucec-genes">
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <br>
+    </footer>
+  <!-- Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<script src="js/custom.js"></script>
+  <!-- Scripts -->
+</body>
+</html>
