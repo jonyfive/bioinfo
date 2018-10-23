@@ -113,14 +113,14 @@ $(document).ready(function(){
 
 // SCROLL TO ID==========================================//
 $( "li" ).click(function() {
-    var temp = $( "li" ).index(this) + 0.98;
-    // if (temp<8){
-    // 	var num = 770 * temp;
-    // }
-    // else{
-    // 	var num = 773 * temp;
-    // }
-    var num = 773 * temp;
+    var temp = $( "li" ).index(this) + 1;
+        console.log(temp)
+    if (temp<7){
+    	var num = 768 * temp;
+ 	}
+ 	else if (temp<22){
+ 		var num = 771*temp;
+ 	}
     window.scrollTo({ top: num, left: 0, behavior: 'smooth' });
 });
 
