@@ -5,8 +5,8 @@
 }
 #types{
 	margin: auto;
-    margin-bottom: 110px;
-    margin-top: 40px;
+    margin-bottom: 100px;
+    margin-top: 20px;
     width: 70%;
     height: 355px;
     border: 3px solid blue;
@@ -65,14 +65,18 @@
 #btn{
     text-align: center;
 }
+.upper{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
 .form-control {
     margin-top: 5px;
     margin-right: 250px;
     margin-left: 250px;
 }
 .container {
-    margin-bottom: 40px;
-    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-top: 30px;
 }
 .pvalue-id {
 	padding: 10px 45px 10px 45px;
@@ -96,9 +100,9 @@ li:hover{
     cursor: pointer;
 }
 hr {
-    border-width: 2px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 35px;
+    color: #0000;
 }
 
 @media only screen and (max-width: 992px) {
